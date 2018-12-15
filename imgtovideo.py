@@ -2,16 +2,19 @@ import cv2
 import os
 
 image_folder = 'images'
-video_name = 'video.avi'
+video_name = 'video.mp4'
 
-images = [img for img in os.listdir(image_folder) if img.endswith(".png")]
-frame = cv2.imread(os.path.join(image_folder, images[0]))
+images = []
+for i in range (296,1291):
+    images.append("outputframe"+str(i)+".jpg.png")
+print(images)
+frame = cv2.imread(images[0])
 height, width, layers = frame.shape
 
 video = cv2.VideoWriter(video_name, -1, 1, (width,height))
 
 for image in images:
-    video.write(cv2.imread(os.path.join(image_folder, image)))
+    video.write(cv2.imread(image))
 
 cv2.destroyAllWindows()
 video.release()
