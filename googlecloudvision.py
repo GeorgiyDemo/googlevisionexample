@@ -24,8 +24,8 @@ def localize_objects(path):
         if box not in allcoords:
             allcoords.append(box)
             r = lambda: random.randint(0,255)
-            draw.line(box + [box[0]], width=5, fill='#%02X%02X%02X' % (r(),r(),r()))
-            draw.text(box[0], object_.name+" "+str(object_.score), font=ImageFont.truetype("~/Library/Fonts/MuseoSansCyrl-300.ttf",30))
+            draw.line(box + [box[0]], width=3, fill='#%02X%02X%02X' % (r(),r(),r()))
+            draw.text(box[0], object_.name+" "+str(object_.score), font=ImageFont.truetype("~/Library/Fonts/MuseoSansCyrl-300.ttf",18))
     image_file.close()
     im.save("output"+path+".png")
             

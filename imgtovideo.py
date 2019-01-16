@@ -4,7 +4,7 @@ image_folder = 'images'
 video_name = 'video.mp4'
 
 images = []
-for i in range (296,1291):
+for i in range (0,1669):
     images.append("outputframe"+str(i)+".jpg.png")
 frame = cv2.imread(images[0])
 height, width, layers = frame.shape
